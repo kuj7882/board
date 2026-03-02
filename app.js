@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
-const boardRouter = require('./router'); // router 가져오기
+const boardRouter = require('./router'); // router 연결
 
 const app = express();
 const PORT = 3000;

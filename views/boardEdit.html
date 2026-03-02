@@ -1,35 +1,33 @@
 <div class="top-line"></div>
 
 <header>
-  <h1>게시글 상세</h1>
-  
-</header> 
+  <h1>게시글 수정</h1>
+  <link rel="stylesheet" href="/style.css">
+</header>
 
 <div class="container">
 
   <div class="detail-card">
 
-    <div class="detail-header">
-      <h2>{{ post.title }}</h2>
-      <div class="meta">
-        <span>작성자: 김유진</span>
-        <span>작성일: {{ post.createdAt }}</span>
+    <form action="/boardEdit/{{ post.id }}" method="POST">
+
+      <div class="detail-header">
+        <input type="text" name="title" value="{{ post.title }}" placeholder="제목을 입력하세요" required
+               style="width:100%; font-size:1.5rem; margin-bottom:1rem; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background:var(--surface); color:var(--text);">
       </div>
-    </div>
 
-    <div class="detail-content">
-      {{ post.content }}
-    </div>
+      <div class="detail-content">
+        <textarea name="content" placeholder="내용을 입력하세요" required
+                  style="width:100%; height:200px; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background:var(--surface); color:var(--text); resize:vertical;">{{ post.content }}</textarea>
+      </div>
 
-   <div class="detail-actions">
-   <a href="/" class="btn-outline left">목록으로</a>
-     <div class="right-buttons">
-   <a href="/boardEdit/{{ post.id }}" class="btn-outline">수정</a>
-   <form action="/boardDelete/{{ post.id }}" method="post" style="display:inline;">
-     <button type="submit" class="btn-outline">삭제</button>
-   </form>
-   </div>
-</div>
+      <div class="detail-actions">
+        <a href="/boardDetail/{{ post.id }}" class="btn-outline">취소</a>
+        <button type="submit" class="btn-outline">수정 완료</button>
+      </div>
+
+    </form>
+
   </div>
 
 </div>
@@ -117,32 +115,18 @@
 /* 버튼 영역 */
 .detail-actions {
   display: flex;
-  justify-content: space-between; /* 왼쪽/오른쪽 분리 */
-  align-items: center;
-  gap: 1rem; /* 버튼 사이 간격 */
+  justify-content: flex-end;
 }
 
-.detail-actions {
-  display: flex;
-  justify-content: space-between; /* 왼쪽/오른쪽 분리 */
-  align-items: center;
-  gap: 1rem; /* 버튼 사이 간격 */
-}
-
-.right-buttons {
-  display: flex;
-  gap: 0.5rem; /* 수정/삭제 버튼 간격 */
-}
-
+/* 외곽 버튼 */
 .btn-outline {
   border: 1px solid var(--accent);
   color: var(--accent);
-  padding: 0.5rem 1.3rem;
+  padding: .5rem 1.3rem;
   text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  transition: all 0.2s;
-  border-radius: 4px;
+  font-size: .85rem;
+  letter-spacing: .05em;
+  transition: all .2s;
 }
 
 .btn-outline:hover {
