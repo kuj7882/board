@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.17.4",
+    "nunjucks": "^3.2.4"
+  },
+  "name": "board",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

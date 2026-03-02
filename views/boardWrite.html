@@ -1,0 +1,139 @@
+
+<div class="top-line"></div>
+
+<header>
+  <h1>게시글 작성</h1>git branch -M main
+  
+  <link rel="stylesheet" href="/style.css">
+</header>
+
+<div class="container">
+
+<form id="writeForm" action="/boardWrite" method="post">
+    <button type="submit" class="btn btn-submit">등록</button>
+
+
+  <input class="form-group" type="text" name="title" placeholder="제목" /><br /><br />
+  <textarea class="form-group" name="content" placeholder="내용"></textarea><br /><br />
+  
+
+  <a href="/" class="btn btn-list">목록으로</a>
+</form>
+
+
+</div>
+
+
+<style>
+    :root {
+      --bg:#0e0e10;
+      --surface:#16161a;
+      --border:#2a2a30;
+      --accent:#c9a96e;
+      --accent2:#e8d5b0;
+      --text:#e8e8e4;
+      --muted:#6e6e72;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Noto Serif KR',serif;
+      min-height:100vh;
+    }
+
+    .top-line{
+      height:2px;
+      background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    }
+
+    header{
+      padding:3rem 0 2rem;
+      text-align:center;
+      border-bottom:1px solid var(--border);
+    }
+
+    header h1{
+      font-family:'Playfair Display',serif;
+      font-size:2.5rem;
+      color:var(--accent2);
+    }
+
+    .container{
+      max-width:800px;
+      margin:0 auto;
+      padding:2rem 1.5rem;
+    }
+
+    .form-group{
+      margin-bottom:1.5rem;
+    }
+
+    label{
+      display:block;
+      margin-bottom:.5rem;
+      font-size:.85rem;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:.8rem 1rem;
+      background:var(--surface);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-family:inherit;
+      font-size:.95rem;
+      border-radius:2px;
+    }
+
+    input:focus, textarea:focus{
+      outline:none;
+      border-color:var(--accent);
+    }
+
+    textarea{
+      min-height:200px;
+      resize:vertical;
+    }
+
+    .btn-area{
+      display:flex;
+      justify-content:flex-end;
+      gap:.8rem;
+      margin-top:2rem;
+    }
+
+    .btn{
+      display: inline-block;
+      padding:.6rem 1.5rem;
+      border:none;
+      text-decoration: none;
+      cursor:pointer;
+      font-family:inherit;
+      font-weight:600;
+      border-radius:2px;
+      transition:.2s;
+    }
+
+    .btn-submit{
+      background:var(--accent);
+      color:#0e0e10;
+      margin-bottom: 2em;
+      display: block;
+  margin-left: auto;
+    }
+    .btn-list{
+      background:#2a2a30;
+      color:var(--muted);
+      
+    }
+
+    .btn-submit:hover{
+      background:var(--accent2);
+    }
+
+  </style>
